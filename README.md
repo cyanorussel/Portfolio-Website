@@ -1,5 +1,5 @@
 # Portfolio-Website
- #Responsive Portfolio Website
+ # Responsive Portfolio Website
 
 Welcome to my Responsive Portfolio Website! This website showcases my projects, skills, and contact information. It is built using HTML, CSS, and JavaScript to ensure a responsive and visually appealing design that works seamlessly across different devices and screen sizes.
 
@@ -10,8 +10,6 @@ Welcome to my Responsive Portfolio Website! This website showcases my projects, 
 - [Technologies Used](#technologies-used)
 - [Setup](#setup)
 - [Usage](#usage)
-- [Screenshots](#screenshots)
-- [License](#license)
 - [Contact](#contact)
 
 ## Demo
@@ -47,24 +45,20 @@ cd portfolio-website
 Open index.html in your browser:
 You can simply double-click the index.html file, or use a local server tool like Live Server in VSCode for a better development experience.
 
-Usage
+## Usage
 Navigate through sections: Use the navigation bar to move between different sections of the website.
 View Projects: Check out the project section to see detailed information about each project.
 Contact Form: Use the contact form to send a message directly from the website.
 Screenshots
 Home Page
 
-Projects Section
 
-Contact Form
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
-Contact
+## Contact
 Feel free to reach out to me via the contact form on the website or through the following channels:
 
-Email: your-email@example.com
-LinkedIn: Your LinkedIn
+Email: your-anmolrajverma@gmail.com
+LinkedIn: 
 GitHub: Your GitHub
 Thank you for visiting my portfolio website!
