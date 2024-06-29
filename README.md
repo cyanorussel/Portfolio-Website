@@ -59,6 +59,5 @@ Home Page
 Feel free to reach out to me via the contact form on the website or through the following channels:
 
 Email: your-anmolrajverma@gmail.com
-LinkedIn: 
-GitHub: Your GitHub
+Resume link:https://olive-almeria-58.tiiny.site/
 Thank you for visiting my portfolio website!
