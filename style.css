@@ -229,7 +229,7 @@ header.sticky{
     width: 100%;
     height:500px;
     overflow:hidden;
-    background: #2d343f;
+    background: #1f242b;
     border-radius: 28px;
     border:2px solid transparent;
     box-shadow: 0 0 10px var(--main-color);
@@ -238,7 +238,7 @@ header.sticky{
 
 .slides {
     width: 100%;
-    height:400px;
+    height:480px;
     display: flex;
     transition: transform 0.5s ease;
    
@@ -247,10 +247,11 @@ header.sticky{
 .slide {
     flex: 0 0 100%;
     padding: 20px;
+    
     box-sizing: border-box;
     text-align: center;
     border-radius: 28px;
-    background-color:#2d343f;
+    background-color:transparent;
     border:1px solid transparent;
 }
 
@@ -288,9 +289,6 @@ header.sticky{
     gap:18px;
 }
 
-
-
-
   .exp-area p span{
     color:var(--other-color);
     font-size: var(--p-font);
@@ -312,7 +310,7 @@ header.sticky{
 }
 .box{
     padding: 80px 40px 66px;
-    background: #2d343f;
+    background: #1f242b;
     border-radius: 28px;
     border:1px solid transparent;
     box-shadow: 0 0 5px var(--main-color);
@@ -378,7 +376,7 @@ margin-bottom: 20px;
     margin-bottom:1.4rem;
 }
 .row{
-    background: #2d343f;
+    background:#1f242b;
     border-radius:28px;
     border: 1px solid transparent;
     box-shadow: 0 0 5px var(--main-color);
@@ -435,7 +433,7 @@ form textarea{
     border:none;
     outline:none;
     box-shadow: 0 0 5px var(--main-color);
-    background: #2d343f;
+    background: #1f242b;
     color:var(--text-color);
     margin-bottom: 20px;
     border-radius:8px;
@@ -486,6 +484,127 @@ form .send-btn:hover{
     border-radius: 50%;
     color: var(--text-color);
     font-size: 27px;
+}
+.education-section {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    margin-top: 30px;
+}
+.education-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.education-title-description {
+    text-align: left;
+    padding:20px;
+    border-radius: 18px;
+    
+    box-shadow: 0 0 10px var(--main-color);
+    
+    background:transparent;
+    color: var(--main-color);
+    border:2px solid var(--main-color);
+    margin-left: 15px;
+    transition:all .50s ease;
+}
+
+.education-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #f7e0b2;
+}
+.education-details {
+    font-size: 1em;
+    text-align: right;
+    margin-top: 20px;
+    text-shadow:0 0 10px rgb(241, 153, 0);
+    
+}
+.container24 {
+    width: 100%;
+    height: 450px;
+    padding: 20px;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+
+
+.skill {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+}
+
+.circular-progress {
+    position: relative;
+    width: 135px;
+    height: 135px;
+    background: conic-gradient(
+        var(--main-color) calc(var(--percentage) * 1%), 
+        #e0e0e0 calc(var(--percentage) * 1%)
+    );
+    box-shadow:0 0 20px #f19900;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.circular-progress::before {
+    content: '';
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    background: #000;
+    border-radius: 50%;
+}
+
+.percentage {
+    position: relative;
+    font-size: 1.2em;
+}
+
+.circular-progress[data-percentage="90"] {
+    --percentage: 90;
+}
+
+.circular-progress[data-percentage="85"] {
+    --percentage: 85;
+}
+
+.circular-progress[data-percentage="80"] {
+    --percentage: 80;
+}
+
+.circular-progress[data-percentage="75"] {
+    --percentage: 75;
+}
+
+.circular-progress[data-percentage="70"] {
+    --percentage: 70;
+}
+.workexpo{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background: transparent;
+    text-shadow: #5d6c83;
+    text-align: center; 
+    font-size: larger;
+    font-stretch: expanded;
+    font-style: italic;
+    margin-top: 60px;
+}
+
+.workexpo span{
+    color: #e0e0e0;
+    text-shadow: 0 0 10px #ef9e12;
 }
 @media (max-width: 1700px){
     header{

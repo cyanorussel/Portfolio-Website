@@ -1,21 +1,21 @@
 const header = document.querySelector("header");
 
-window.addEventListener("scroll",function(){
-    header.classList.toggle("sticky",window.scrollY>120);
+window.addEventListener("scroll", function () {
+    header.classList.toggle("sticky", window.scrollY > 120);
 })
 
-let menu=document.querySelector('#menu-icon');
-let navlist=document.querySelector('.navlist');
+let menu = document.querySelector('#menu-icon');
+let navlist = document.querySelector('.navlist');
 
-menu.onclick=() =>{
+menu.onclick = () => {
     menu.classList.toggle('bx-x');
     navlist.classList.toggle('active');
 };
-window.onscroll = ()=>{
+window.onscroll = () => {
     menu.classList.remove('bx-x');
     navllist.classList.remove('active');
 };
-document.getElementById('downloadBtn').addEventListener('click', function() {
+document.getElementById('downloadBtn').addEventListener('click', function () {
     // Path to the file to be downloaded
     const fileUrl = 'RESUME.pdf';
     // Name of the file after download
@@ -154,6 +154,7 @@ function showSlide(index) {
 
     currentIndex = index;
 }
+
 
 
 
