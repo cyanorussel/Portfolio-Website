@@ -487,8 +487,11 @@ form .send-btn:hover{
 }
 .education-section {
     font-family: Arial, sans-serif;
-    margin: 20px;
-    margin-top: 30px;
+    height: 450px;
+    padding:10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    background: transparent;
 }
 .education-item {
     display: flex;
@@ -525,7 +528,8 @@ form .send-btn:hover{
 .container24 {
     width: 100%;
     height: 450px;
-    padding: 20px;
+    padding: 10px;
+
     background: transparent;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -605,6 +609,15 @@ form .send-btn:hover{
 .workexpo span{
     color: #e0e0e0;
     text-shadow: 0 0 10px #ef9e12;
+}
+.container26{
+    width: 100%;
+    height: 450px;
+    padding: 20px;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 @media (max-width: 1700px){
     header{
