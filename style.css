@@ -195,6 +195,7 @@ header.sticky{
     display: grid;
     grid-template-columns: 1fr 2fr;
    align-items:center;
+
     gap: 4rem;
 }
 .about-img img{
@@ -225,7 +226,7 @@ header.sticky{
 .banner-container {
     margin-bottom: 30px;
     padding: 0px;
-    position: relative;
+     position: relative;
     width: 100%;
     height:500px;
     overflow:hidden;
@@ -238,7 +239,7 @@ header.sticky{
 
 .slides {
     width: 100%;
-    height:480px;
+    height:auto;
     display: flex;
     transition: transform 0.5s ease;
    
@@ -367,6 +368,7 @@ margin-bottom: 20px;
     align-items: center;
     gap: 2.3rem;
     margin-top: 4.2rem;
+    
     
 }
 .row img{
@@ -621,7 +623,7 @@ form .send-btn:hover{
 }
 @media (max-width: 1700px){
     header{
-        padding: 20px 8%;
+        padding: 20px 18%;
 
     }
     header.sticky{
@@ -638,25 +640,41 @@ form .send-btn:hover{
     }
     
 }
-@media (max-width: 1380px){
+@media (max-width: 1400px){
     header{
-        padding: 20px 5%;
+        padding: 20px 15%;
 
     }
     header.sticky{
-        padding: 14px 5%;
+        padding: 14px 15%;
     }
     section{
-        padding: 90px 5% 80px;
+        padding: 80px 5% 80px;
     }
     .footer{
         padding: 18px 5%;
     }
     .hero{
-        height: 90vh;
+        height: 60vh;
         background-position: top right;
     }
+    .about{
+        grid-template-columns: 1fr 2fr ;
+        gap:2rem;
+        text-align:center;
+        
+    }
+    .about-img img{
+        text-align:center;
+        width:100%;
+        height:300px;
+        max-width:300px;
+        border-radius:50%;
+        object-fit:cover;
+        margin: 0 auto;
+    }
     
+   
 }
 @media (max-width: 1290px){
     .box{
@@ -726,20 +744,37 @@ form .send-btn:hover{
     right:0;
 }
 .hero{
-    height: 90vh;
+    height: 60vh;
     background-position: top right;
+}
+.banner-container {
+    display: none;
 }
 }
 @media (max-width: 680px){
+    header{
+       width:100%;
+       
+    }
      .main-content p{
         width:100%;
      }
      .hero{
-        height: 90vh;
+        height: 60vh;
         background-position: top right;
+    }
+    .banner-container {
+       display: none;
     }
 }
 @media (max-width:470px){
+    header{
+        width:100%;
+        padding: 20px 5%;
+     }
+     header.sticky{
+        padding: 14px 5%;
+    }
     :root{
         --h1-font:3rem;
         --h2-font:2rem;
@@ -747,10 +782,21 @@ form .send-btn:hover{
     .about-img img{
         text-align:center;
         width:100%;
-        height:300px;
-        max-width:300px;
+        height:200px;
+        max-width:200px;
         border-radius:50%;
         object-fit:cover;
         margin: 0 auto;    
     }
+    .banner-container {
+        
+        display: none;
+    }
+   .hero{
+    background-image: none;
+    margin-top:50px ;
+   }
+    .main-content p{
+        width:80%;
+     }
 }
