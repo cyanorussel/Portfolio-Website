@@ -810,4 +810,10 @@ body.no-select {
     .main-content p{
         width:80%;
      }
+     .Portfolio-content{  
+           width:100%;
+        padding:10px 5%;
+        
+     }
+     
 }
