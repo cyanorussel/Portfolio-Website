@@ -156,4 +156,63 @@ function showSlide(index) {
 }
 
 
-
+(function() {
+    const uniqueSlides2 = document.getElementById('draggable-slides2');
+    const uniqueBannercontainer2 = uniqueSlides2.parentElement;
+  
+    let isUniqueDragging = false;
+    let uniqueStartY;
+    let uniqueInitialTop;
+  
+    uniqueSlides2.addEventListener('mousedown', (e) => {
+      isUniqueDragging = true;
+      uniqueSlides2.classList.add('active');
+      uniqueStartY = e.clientY;
+      uniqueInitialTop = uniqueSlides2.offsetTop;
+  
+      // Prevent text selection
+      document.body.style.userSelect = 'none';
+      document.body.style.pointerEvents = 'none';
+    });
+  
+    document.addEventListener('mouseleave', () => {
+      if (isUniqueDragging) {
+        isUniqueDragging = false;
+        uniqueSlides2.classList.remove('active');
+        document.body.style.userSelect = 'auto';
+        document.body.style.pointerEvents = 'auto';
+      }
+    });
+  
+    document.addEventListener('mouseup', () => {
+      if (isUniqueDragging) {
+        isUniqueDragging = false;
+        uniqueSlides2.classList.remove('active');
+        document.body.style.userSelect = 'auto';
+        document.body.style.pointerEvents = 'auto';
+      }
+    });
+  
+    document.addEventListener('mousemove', (e) => {
+      if (!isUniqueDragging) return;
+      e.preventDefault();
+  
+      const uniqueCurrentY = e.clientY;
+      const uniqueDeltaY = uniqueCurrentY - uniqueStartY;
+      let uniqueNewTop = uniqueInitialTop + uniqueDeltaY;
+  
+      // Ensure uniqueSlides2 does not scroll out of bounds
+      const uniqueMaxTop = 0;
+      const uniqueMinTop = uniqueBannercontainer2.clientHeight - uniqueSlides2.scrollHeight;
+  
+      if (uniqueNewTop > uniqueMaxTop) {
+        uniqueNewTop = uniqueMaxTop;
+      } else if (uniqueNewTop < uniqueMinTop) {
+        uniqueNewTop = uniqueMinTop;
+      }
+  
+      uniqueSlides2.style.top = `${uniqueNewTop}px`;
+    });
+  })();
+  
+  
