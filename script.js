@@ -163,41 +163,33 @@ function showSlide(index) {
     let isUniqueDragging = false;
     let uniqueStartY;
     let uniqueInitialTop;
+    let preventScroll = false;
   
-    uniqueSlides2.addEventListener('mousedown', (e) => {
+    function startDrag(e) {
       isUniqueDragging = true;
       uniqueSlides2.classList.add('active');
-      uniqueStartY = e.clientY;
+      uniqueStartY = (e.type === 'mousedown') ? e.clientY : e.touches[0].clientY;
       uniqueInitialTop = uniqueSlides2.offsetTop;
   
       // Prevent text selection
       document.body.style.userSelect = 'none';
       document.body.style.pointerEvents = 'none';
-    });
+    }
   
-    document.addEventListener('mouseleave', () => {
+    function endDrag() {
       if (isUniqueDragging) {
         isUniqueDragging = false;
         uniqueSlides2.classList.remove('active');
         document.body.style.userSelect = 'auto';
         document.body.style.pointerEvents = 'auto';
       }
-    });
+    }
   
-    document.addEventListener('mouseup', () => {
-      if (isUniqueDragging) {
-        isUniqueDragging = false;
-        uniqueSlides2.classList.remove('active');
-        document.body.style.userSelect = 'auto';
-        document.body.style.pointerEvents = 'auto';
-      }
-    });
-  
-    document.addEventListener('mousemove', (e) => {
+    function doDrag(e) {
       if (!isUniqueDragging) return;
       e.preventDefault();
   
-      const uniqueCurrentY = e.clientY;
+      const uniqueCurrentY = (e.type === 'mousemove') ? e.clientY : e.touches[0].clientY;
       const uniqueDeltaY = uniqueCurrentY - uniqueStartY;
       let uniqueNewTop = uniqueInitialTop + uniqueDeltaY;
   
@@ -212,7 +204,31 @@ function showSlide(index) {
       }
   
       uniqueSlides2.style.top = `${uniqueNewTop}px`;
-    });
+  
+      // Check if the draggable container is at the top or bottom
+      if (uniqueNewTop === uniqueMaxTop || uniqueNewTop === uniqueMinTop) {
+        preventScroll = false;
+      } else {
+        preventScroll = true;
+      }
+    }
+  
+    uniqueSlides2.addEventListener('mousedown', startDrag);
+    uniqueSlides2.addEventListener('touchstart', startDrag);
+  
+    document.addEventListener('mouseup', endDrag);
+    document.addEventListener('touchend', endDrag);
+  
+    document.addEventListener('mousemove', doDrag);
+    document.addEventListener('touchmove', doDrag);
+  
+    // Prevent scrolling when the draggable container is being moved
+    document.addEventListener('wheel', (e) => {
+      if (preventScroll) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+  
   })();
   
   
