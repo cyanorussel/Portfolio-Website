@@ -171,7 +171,7 @@ function showSlide(index) {
       uniqueStartY = (e.type === 'mousedown') ? e.clientY : e.touches[0].clientY;
       uniqueInitialTop = uniqueSlides2.offsetTop;
   
-      // Prevent text selection
+      // Prevent text selection and default scrolling
       document.body.style.userSelect = 'none';
       document.body.style.pointerEvents = 'none';
     }
@@ -182,6 +182,7 @@ function showSlide(index) {
         uniqueSlides2.classList.remove('active');
         document.body.style.userSelect = 'auto';
         document.body.style.pointerEvents = 'auto';
+        preventScroll = false; // Allow scrolling after dragging
       }
     }
   
@@ -220,7 +221,7 @@ function showSlide(index) {
     document.addEventListener('touchend', endDrag);
   
     document.addEventListener('mousemove', doDrag);
-    document.addEventListener('touchmove', doDrag);
+    document.addEventListener('touchmove', doDrag, { passive: false });
   
     // Prevent scrolling when the draggable container is being moved
     document.addEventListener('wheel', (e) => {
@@ -229,6 +230,12 @@ function showSlide(index) {
       }
     }, { passive: false });
   
-  })();
+    // Prevent touch scrolling when the draggable container is being moved
+    document.addEventListener('touchmove', (e) => {
+      if (preventScroll) {
+        e.preventDefault();
+      }
+    }, { passive: false });
   
+  })();
   
