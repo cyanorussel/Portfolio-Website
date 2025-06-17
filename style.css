@@ -1,3 +1,48 @@
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -200,14 +245,14 @@ header.sticky{
 }
 .about-img img{
     width: 100%;
-    height: 400px;
     max-width: 400px;
-    border-radius: 60%;
-    object-fit:cover;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
     border: 7px solid var(--main-color);
     box-shadow: 0 0 20px var(--main-color);
-    margin-bottom: 50px;
-    margin-top: 70px;
+    margin: 40px auto 40px auto;
+    display: block;
 }
 .about-text h2{
     font-size:var(--h2-font);
@@ -666,7 +711,7 @@ body.no-select {
         padding: 18px 5%;
     }
     .hero{
-        height: 60vh;
+        height: 90vh;
         background-position: top right;
     }
     .about{
@@ -857,4 +902,49 @@ body.no-select {
         height:300px;
      }
      
+}
+/* Responsive for tablets */
+@media (max-width: 768px) {
+    .about {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .main-content h1 {
+        font-size: 2.2rem;
+    }
+    .services-content, .Portfolio-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .about-img img {
+        height: 220px;
+        max-width: 220px;
+    }
+}
+
+/* Responsive for small phones */
+@media (max-width: 600px) {
+    .main-content h1 {
+        font-size: 1.5rem;
+    }
+    .main-content p {
+        font-size: 0.9rem;
+        width: 100%;
+    }
+    .about-img img {
+        height: 120px;
+        max-width: 120px;
+    }
+    .box, .row {
+        padding: 20px 10px;
+    }
+    .footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
